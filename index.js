@@ -9,11 +9,15 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    return console.log(prompt());
+    return 0;
 }
 
-function playRound(){
+function playRound(humanChoice, computerChoice){
     
 }
 
-getHumanChoice();
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+
+ 
