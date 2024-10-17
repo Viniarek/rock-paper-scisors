@@ -46,9 +46,9 @@ header{
 #result{
     background: #e6e6e67a;
     font-size: 24px;
-    padding: 15px;
     margin: 0;
-    width: 80%;
+    padding: 20px;
+    width: 75%;
     text-align: center;
     text-shadow: 1px 1px black;
 }
@@ -65,7 +65,8 @@ header{
     width: 100%;
     display: flex;
     justify-content: space-around;
-    max-width: 75%;
+    max-width: 900px;
+    min-width: 580px;
 }
 
 .player-choice{
@@ -88,10 +89,6 @@ header{
     transition: color 0.3s, background 0.3s, transform 0.3s;
 }
 
-
-
-
-
 footer{
     border-top: 1px solid black;
     flex-direction: column;
@@ -104,7 +101,6 @@ footer{
 }
 
 footer a{
-    
     margin-top: 8px;
     color: black;
     text-decoration: none;

@@ -26,9 +26,6 @@ scissors.addEventListener("click", (e)=>{
 });
 
 
-
-
-
 function getComputerChoice(){
     let computerChoice = Math.floor(Math.random() * (3));
     return computerChoice == 0 ? "rock"
@@ -69,10 +66,10 @@ function playRound(humanChoice){
     }
 
     if(humanPts == 5){
-        result.innerHTML = "You won whole game! Click any option to start new game.";
+        result.innerHTML = "You won whole game! You earned 5 points! Click any option to start new game.";
         restartGame();
     } else if(computerPts == 5){
-        result.innerHTML = "You lose whole game! Click any option to start new game."
+        result.innerHTML = "You lose whole game! Opponent earned 5 points! Click any option to start new game."
         restartGame();
     }
 }
