@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scisors</title>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js" async></script>
+    
     <script src="https://kit.fontawesome.com/6f8bb6933c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header> <h1>Rock Paper Scisors</h1></header>
+    <header> <h1>Rock Paper Scissors</h1></header>
     <div class="upper-section">
         <div class="left">
-            <p>Your points: </p>
-            <p>Computer points: </p>
+            <p>Your points: <span id="human-pts"></span></p>
+            <p>Computer points: <span id="computer-pts"></span></p>
         </div>
         <div class="right">
             <h2>Opponent's choice</h2>
-        <div class="computer-choice" id="computer-choice">
-            <i class="fa-solid fa-hand-fist" id="computer-choice"></i>
+        <div class="computer-choice rock" id="computer-icon">
+            
         </div>
         </div>
         
@@ -26,13 +26,14 @@
     <div class="lower-section">
         <div id="rock" class="player-choice"><i class="fa-solid fa-hand-fist"></i></div>
         <div id="paper" class="player-choice"><i class="fa-solid fa-hand"></i></div>
-        <div id="scisors" class="player-choice"><i class="fa-solid fa-hand-scissors"></i></div>
+        <div id="scissors" class="player-choice"><i class="fa-solid fa-hand-scissors"></i></div>
     </div>
 
     <footer>
         <a href="https://github.com/Viniarek"><i class="fa-brands fa-github"></i>Github</a>
         <p>Copyright &copy; 2024 Viniarek</p>
     </footer>
+    <script src="index.js"></script>
 </body>
 
 </html>
