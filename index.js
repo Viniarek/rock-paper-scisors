@@ -37,6 +37,13 @@ function getComputerChoice(){
         : "error";
 }
 
+function restartGame(){
+    humanPts = 0;
+    computerPts = 0;
+    humanPtsSpan.innerHTML = humanPts;
+    computerPtsSpan.innerHTML = computerPts;
+}
+
 function playRound(humanChoice){
     const computerChoice = getComputerChoice();
     if(computerChoice == "rock"){
@@ -51,7 +58,7 @@ function playRound(humanChoice){
         result.innerHTML = "Computer win!";
         computerPts++;
         computerPtsSpan.innerHTML = computerPts;
-    } else if((humanChoice == "rock" && computerChoice == "scissors")){
+    } else if((humanChoice == "rock" && computerChoice == "scissors") || (humanChoice == "paper" && computerChoice =="rock") || (humanChoice == "scissors" && computerChoice == "paper")){
         result.style.color = "green";
         result.innerHTML = "You win!";
         humanPts++;
@@ -61,8 +68,13 @@ function playRound(humanChoice){
         result.innerHTML = "Draw!";
     }
 
-    //console.log(computerChoice, humanChoice);
-    
+    if(humanPts == 5){
+        result.innerHTML = "You won whole game! Click any option to start new game.";
+        restartGame();
+    } else if(computerPts == 5){
+        result.innerHTML = "You lose whole game! Click any option to start new game."
+        restartGame();
+    }
 }
 
 
