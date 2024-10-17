@@ -2,13 +2,16 @@ const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 const computerIcon = document.getElementById("computer-icon")
+const result = document.getElementById("result");
+
 
 let humanPts = 0;
 let computerPts = 0;
 
+const computerPtsSpan = document.getElementById("computer-pts");
 const humanPtsSpan = document.getElementById("human-pts");
 
-humanPtsSpan.content = humanPts;
+
 
 rock.addEventListener("click", (e)=>{
     playRound(humanChoice=e.currentTarget.id);
@@ -30,7 +33,7 @@ function getComputerChoice(){
     let computerChoice = Math.floor(Math.random() * (3));
     return computerChoice == 0 ? "rock"
         : computerChoice == 1 ? "paper"
-        : computerChoice == 2 ? "scisors"
+        : computerChoice == 2 ? "scissors"
         : "error";
 }
 
@@ -40,14 +43,25 @@ function playRound(humanChoice){
         computerIcon.innerHTML=`<i class="fa-solid fa-hand-fist"></i>`;
     } else if(computerChoice == "paper"){
         computerIcon.innerHTML=`<i class="fa-solid fa-hand"></i>`;
-    } else if(computerChoice == "scisors"){
+    } else if(computerChoice == "scissors"){
         computerIcon.innerHTML=`<i class="fa-solid fa-hand-scissors"></i>`;
     }
-    if(humanChoice=="rock" || computerChoice == "paper"){
-        
+    if((humanChoice=="rock" && computerChoice == "paper") || (humanChoice=="paper" && computerChoice == "scissors") || (humanChoice=="scissors" && computerChoice == "rock")){
+        result.style.color = "red";
+        result.innerHTML = "Computer win!";
+        computerPts++;
+        computerPtsSpan.innerHTML = computerPts;
+    } else if((humanChoice == "rock" && computerChoice == "scissors")){
+        result.style.color = "green";
+        result.innerHTML = "You win!";
+        humanPts++;
+        humanPtsSpan.innerHTML = humanPts;
+    } else if(humanChoice == computerChoice){
+        result.style.color = "yellow";
+        result.innerHTML = "Draw!";
     }
 
-    console.log(computerChoice, humanChoice);
+    //console.log(computerChoice, humanChoice);
     
 }
 
